@@ -34,16 +34,19 @@ cd ..
 mkdir -p artifacts
 
 ## Clone the new repository
+# Set repository URL
 REPO_URL="https://github.com/Dhananjay-97/cml-app.git"
+
 TARGET_DIR="cml-app"
 
+# Clone or pull the latest changes
 if [ -d "$TARGET_DIR" ]; then
-    echo "Repository already exists. Pulling latest changes..."
+    echo "Repository already exists. Pulling latest changes from main..."
     cd "$TARGET_DIR"
     git pull origin main
 else
-    echo "Cloning repository from $REPO_URL..."
-    git clone "$REPO_URL"
+    echo "Cloning repository from ${REPO_URL} (main branch)..."
+    git clone --branch main "$REPO_URL" "$TARGET_DIR"
 fi
 
 # RELEASE_URL=https://github.com/cloudera/CML_AMP_RAG_Studio/releases/latest/download
