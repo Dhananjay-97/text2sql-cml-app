@@ -7,7 +7,11 @@ prototype_version: 1.0
 
 
 environment_variables:
-    # Added environment variables for Text-to-SQL models and database credentials
+    OPENAI_API_KEY:
+        default: "sk-proj-_4tQsUcsB0lmE4g5RMrVo7EH-DIBjMGwH3vQUiK1hi1CforHL0_kGRu6eQVXwCuGDyRuGnwayVT3BlbkFJMmJkhQ4A"
+        description: "OpenAI api key to use for text-to-SQL conversion."
+        required: true
+        
     OPENAI_CHAT_MODEL:
         default: "gpt-4o-mini"
         description: "OpenAI Chat Model to use for text-to-SQL conversion."
